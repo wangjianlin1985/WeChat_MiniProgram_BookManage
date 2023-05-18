@@ -1,0 +1,83 @@
+<view class="container">
+  <loading hidden="{{loadingHide}}">
+    {{loadingText}}
+  </loading>
+
+  <view class="title">读者详情</view>
+  <view class="reader_detail_view"> 
+      <view class="viewItem">
+        <view class="label">读者编号：</view>
+        <view class="content">
+          <view>{{readerNo}}</view>
+        </view>
+      </view>
+
+       <view class="viewItem">
+        <view class="label">登录密码：</view>
+        <view class="content"> 
+          <view>{{password}}</view>
+        </view>
+      </view>
+
+       <view class="viewItem">
+        <view class="label">读者类型：</view>
+        <view class="content"> 
+          <view>{{readerTypeObj}}</view>
+        </view>
+      </view>
+
+       <view class="viewItem">
+        <view class="label">姓名：</view>
+        <view class="content"> 
+          <view>{{readerName}}</view>
+        </view>
+      </view>
+
+       <view class="viewItem">
+        <view class="label">性别：</view>
+        <view class="content"> 
+          <view>{{sex}}</view>
+        </view>
+      </view>
+
+       <view class="viewItem">
+        <view class="label">读者头像：</view>
+        <view class="content"> 
+          <image mode="aspectFill" src="{{photoUrl}}"></image>
+        </view>
+      </view>
+
+       <view class="viewItem">
+        <view class="label">读者生日：</view>
+        <view class="content"> 
+          <view>{{birthday}}</view>
+        </view>
+      </view>
+
+       <view class="viewItem">
+        <view class="label">联系电话：</view>
+        <view class="content"> 
+          <view>{{telephone}}</view>
+        </view>
+      </view>
+
+       <view class="viewItem">
+        <view class="label">联系Email：</view>
+        <view class="content"> 
+          <view>{{email}}</view>
+        </view>
+      </view>
+
+       <view class="viewItem">
+        <view class="label">读者地址：</view>
+        <view class="content"> 
+          <view>{{address}}</view>
+        </view>
+      </view>
+
+      <view>
+        <navigator class="btnReturn" open-type="navigateBack" hover-class="navigator-hover">返回</navigator>
+      </view>
+
+  </view>
+</view>

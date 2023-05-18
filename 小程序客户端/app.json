@@ -1,0 +1,72 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/system/user",
+    "pages/system/about",
+    "pages/system/lianx",
+    "pages/bookType/bookType_add",
+    "pages/bookType/bookType_detail",
+    "pages/bookType/bookType_list",
+    "pages/bookType/bookType_modify",
+    "pages/book/book_add",
+    "pages/book/book_detail",
+    "pages/book/book_list",
+    "pages/book/book_modify",
+    "pages/readerType/readerType_add",
+    "pages/readerType/readerType_detail",
+    "pages/readerType/readerType_list",
+    "pages/readerType/readerType_modify",
+    "pages/reader/reader_add",
+    "pages/reader/reader_detail",
+    "pages/reader/reader_list",
+    "pages/reader/reader_modify",
+    "pages/loanInfo/loanInfo_add",
+    "pages/loanInfo/loanInfo_detail",
+    "pages/loanInfo/loanInfo_list",
+    "pages/loanInfo/loanInfo_modify",
+    "pages/mobile/mobile",
+    "pages/loanInfo/loanInfo_readerList"
+  ],
+  "window": {
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "图书借阅小程序",
+    "navigationBarBackgroundColor": "#00AC2C",
+    "backgroundColor": "#EEEEEE",
+    "enablePullDownRefresh": true,
+    "backgroundTextStyle": "dark"
+  },
+  "tabBar": {
+    "color": "#b7b7b7",
+    "selectedColor": "#00AC2C",
+    "borderStyle": "white",
+    "backgroundColor": "#f5f5f5",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "images/icons/icon_home.png",
+        "selectedIconPath": "images/icons/icon_home_selected.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/bookType/bookType_list",
+        "iconPath": "images/icons/icon_cate.png",
+        "selectedIconPath": "images/icons/icon_cate_selected.png",
+        "text": "图书类型"
+      },
+      {
+        "pagePath": "pages/book/book_list",
+        "iconPath": "images/icons/icon_cart.png",
+        "selectedIconPath": "images/icons/icon_cart_selected.png",
+        "text": "图书"
+      },
+      {
+        "pagePath": "pages/system/user",
+        "iconPath": "images/icons/icon_member.png",
+        "selectedIconPath": "images/icons/icon_member_selected.png",
+        "text": "个人"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}

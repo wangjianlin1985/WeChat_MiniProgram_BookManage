@@ -1,0 +1,29 @@
+<view class="container">
+  <loading hidden="{{loadingHide}}">
+    {{loadingText}}
+  </loading>
+  <view class="title">添加图读者类型</view>
+
+  <view class="readerType_add_view">
+    <form bindsubmit="formSubmit">
+      <view class="formItem">
+        <view class="label">读者类型：</view>
+        <view class="formControl">
+          <input type="text" name="readerType.readerTypeName" placeholder="请输入读者类型" value="{{readerTypeName}}" />
+        </view>
+      </view>
+
+      <view class="formItem">
+        <view class="label">可借阅数目：</view>
+        <view class="formControl">
+          <input type="text" name="readerType.number" placeholder="请输入可借阅数目" value="{{number}}" />
+        </view>
+      </view>
+
+      <view>
+        <button class="vBtn_ok" formType="submit" disabled="{{disabled}}">提交发布</button>
+      </view>
+
+    </form>
+  </view>
+</view>

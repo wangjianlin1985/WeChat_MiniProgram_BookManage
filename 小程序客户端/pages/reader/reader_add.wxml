@@ -1,0 +1,98 @@
+<view class="container">
+  <loading hidden="{{loadingHide}}">
+    {{loadingText}}
+  </loading>
+  <view class="title">添加图读者</view>
+
+  <view class="reader_add_view">
+    <form bindsubmit="formSubmit">
+      <view class="formItem">
+        <view class="label">读者编号：</view>
+        <view class="formControl">
+          <input type="text" name="reader.readerNo" placeholder="请输入读者编号" value="{{readerNo}}" />
+        </view>
+      </view>
+
+      <view class="formItem">
+        <view class="label">登录密码：</view>
+        <view class="formControl">
+          <input type="text" name="reader.password" placeholder="请输入登录密码" value="{{password}}" />
+        </view>
+      </view>
+
+      <view class="formItem">
+        <view class="label">读者类型：</view>
+        <view class="formControl">
+          <picker bindchange="bind_readerTypeObj_change" value="{{readerTypeObj_Index}}" range-key="readerTypeName" range="{{readerTypes}}">
+            <view style="display:flex;border:1px solid green;">
+              <input hidden="true" name="reader.readerTypeObj.readerTypeId" value="{{readerTypes[readerTypeObj_Index].readerTypeId}}" />
+              <input style="width:90%;border:0px;" value="{{readerTypes[readerTypeObj_Index].readerTypeName}}"></input>
+              <image class="arrow-r" src="/images/arrow-r-0.png"></image>
+            </view>
+          </picker> 
+        </view>
+      </view>
+
+      <view class="formItem">
+        <view class="label">姓名：</view>
+        <view class="formControl">
+          <input type="text" name="reader.readerName" placeholder="请输入姓名" value="{{readerName}}" />
+        </view>
+      </view>
+
+      <view class="formItem">
+        <view class="label">性别：</view>
+        <view class="formControl">
+          <input type="text" name="reader.sex" placeholder="请输入性别" value="{{sex}}" />
+        </view>
+      </view>
+
+       <view class="formItem">
+        <view class="label">读者头像：</view>
+        <view class="formControl" bindtap="select_photo">
+          <input type="text" hidden="true" name="reader.photo" value="{{photo}}" />
+          <image wx:for="{{photoList}}" class="uploadPic" mode="aspectFill" src="{{item}}" wx:key=""></image>
+          <image src="../../images/upic.png" class="uploadPic" mode="widthFix"></image>
+        </view>
+      </view>
+
+       <view class="formItem">
+        <view class="label">读者生日：</view>
+        <view class="formControl">
+          <picker mode="date"  start="1970-01-01" end="2030-01-01" value="{{birthday}}" bindchange="bind_birthday_change" >
+            <view style="display:flex;border:1px solid green;">
+              <input style="width:90%;border:0px;" name="reader.birthday" placeholder="选择读者生日"  value="{{birthday}}"></input>
+              <text class="clearButton" catchtap="clear_birthday">x</text>
+            </view>
+          </picker>
+        </view>
+      </view>
+
+      <view class="formItem">
+        <view class="label">联系电话：</view>
+        <view class="formControl">
+          <input type="text" name="reader.telephone" placeholder="请输入联系电话" value="{{telephone}}" />
+        </view>
+      </view>
+
+      <view class="formItem">
+        <view class="label">联系Email：</view>
+        <view class="formControl">
+          <input type="text" name="reader.email" placeholder="请输入联系Email" value="{{email}}" />
+        </view>
+      </view>
+
+      <view class="formItem">
+        <view class="label">读者地址：</view>
+        <view class="formControl">
+          <input type="text" name="reader.address" placeholder="请输入读者地址" value="{{address}}" />
+        </view>
+      </view>
+
+      <view>
+        <button class="vBtn_ok" formType="submit" disabled="{{disabled}}">提交发布</button>
+      </view>
+
+    </form>
+  </view>
+</view>

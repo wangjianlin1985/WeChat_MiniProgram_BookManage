@@ -1,0 +1,29 @@
+<view class="container">
+  <loading hidden="{{loadingHide}}">
+    {{loadingText}}
+  </loading>
+  <view class="title">添加图图书类型</view>
+
+  <view class="bookType_add_view">
+    <form bindsubmit="formSubmit">
+      <view class="formItem">
+        <view class="label">类别名称：</view>
+        <view class="formControl">
+          <input type="text" name="bookType.bookTypeName" placeholder="请输入类别名称" value="{{bookTypeName}}" />
+        </view>
+      </view>
+
+      <view class="formItem">
+        <view class="label">可借阅天数：</view>
+        <view class="formControl">
+          <input type="text" name="bookType.days" placeholder="请输入可借阅天数" value="{{days}}" />
+        </view>
+      </view>
+
+      <view>
+        <button class="vBtn_ok" formType="submit" disabled="{{disabled}}">提交发布</button>
+      </view>
+
+    </form>
+  </view>
+</view>

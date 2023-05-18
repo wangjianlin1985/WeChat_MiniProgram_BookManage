@@ -1,0 +1,84 @@
+<view class="container">
+  <view class="toggleQview" bindtap="toggleQueryViewHide" style="padding:5px;">显示或隐藏查询视图</view>
+  <view class="queryView" hidden="{{queryViewHidden}}">
+    <view class="queryParams">
+      <view class="queryItem">
+        <view class="label">读者编号：</view>
+        <view class="searchControl"><input data-id="readerNo" placeholder="请输入读者编号关键字" value="{{readerNo}}" bindinput="searchValueInput" /></view>
+      </view>
+
+      <view class="queryItem">
+        <view class="label">读者类型：</view>
+        <view class="searchControl">
+          <picker bindchange="bind_readerTypeObj_change" value="{{readerTypeObj_Index}}" range-key="readerTypeName" range="{{readerTypes}}">
+            <view class="value" name="types">
+              <input style="width:75%;display:inline-block;float:left;" value="{{readerTypes[readerTypeObj_Index].readerTypeName}}"></input>
+              <image class="arrow-r" src="/images/arrow-r-0.png"></image>
+            </view>
+          </picker> 
+        </view>
+      </view>
+
+      <view class="queryItem">
+        <view class="label">姓名：</view>
+        <view class="searchControl"><input data-id="readerName" placeholder="请输入姓名关键字" value="{{readerName}}" bindinput="searchValueInput" /></view>
+      </view>
+
+      <view class="queryItem">
+        <view class="label">读者生日：</view>
+         <view class="searchControl">
+          <picker mode="date" value="{{birthday}}" start="1970-01-01" end="2030-01-01" bindchange="bind_birthday_change" >
+            <view>
+              <input style="width:75%;display:inline-block;float:left;" placeholder="选择读者生日" value="{{birthday}}"></input>
+              <text class="clearButton" catchtap="clear_birthday">x</text>
+            </view>
+          </picker> 
+        </view>
+      </view>
+
+      <view class="queryItem">
+        <view class="label">联系电话：</view>
+        <view class="searchControl"><input data-id="telephone" placeholder="请输入联系电话关键字" value="{{telephone}}" bindinput="searchValueInput" /></view>
+      </view>
+
+    </view>
+
+    <view class="queryButton">
+       <button class="font_12 fl_r op-btn mr_10" bindtap="queryReader">查询</button>
+    </view>
+  </view>
+
+  <view class="readerList">
+  <block wx:for-items="{{readers}}" wx:key="{{index}}">
+    <view class="readerItem">
+        <view class="readerImg">
+          <image src="{{item.photoUrl}}"></image>
+        </view>
+        <navigator url="reader_detail?readerNo={{item.readerNo}}" hover-class="navigator-hover">
+        <view class="readerText">
+          <view>读者编号：{{item.readerNo}}</view>
+          <view>读者类型：{{item.readerTypeObj.readerTypeName}}</view>
+          <view>姓名：{{item.readerName}}</view>
+          <view>性别：{{item.sex}}</view>
+          <view>读者生日：{{item.birthday}}</view>
+        </view>
+        </navigator>
+    </view>
+    <view class="opt_view" style="display:none;">
+      <button class="font_12 fl_r del-btn mr_10" bindtap="removeReader" data-readerno="{{item.readerNo}}">删除</button> 
+      <navigator url="reader_modify?readerNo={{item.readerNo}}" hover-class="navigator-hover">
+        <button class="font_12 fl_r op-btn mr_10">编辑</button>
+      </navigator>
+    </view>
+  </block>
+  </view>
+
+  <view hidden="{{loading_hide}}" class="loading">
+    <view class="loadingImg"><image src="/images/loading.gif" mode="aspectFill"></image></view>
+    <view class="loadingTxt">..加载中..</view>
+  </view>
+  <view class="nodata_view" hidden="{{nodata_hide}}">
+    <image src="/images/Noline.png" mode="widthFix"></image>
+  </view>
+</view>
+
